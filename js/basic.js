@@ -26,7 +26,8 @@ submitButton.addEventListener("click", () => {
 
     if (userEditVerification == 0) {
         users.push({username: newUsername.value, email: newEmail.value, address: newAddress.value, admin: adminCB.checked, pictureFile: picture.files[0]})
-    } 
+    }
+    
     updateTable(users)
 
     newUsername.value = ""
