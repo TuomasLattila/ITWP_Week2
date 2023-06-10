@@ -7,13 +7,24 @@ let newEmail = document.getElementById("input-email")
 let newAddress = document.getElementById("input-address")
 let adminCB = document.getElementById("input-admin")
 
-let rowCount = 0
+userEditVerification = 0
 
 let users = []
 
 submitButton.addEventListener("click", () => {
 
-    users.push({username: newUsername.value, email: newEmail.value, address: newAddress.value, admin: adminCB.checked})
+    users.forEach(user => {
+        if (user.username == newUsername.value) {
+            user.email = newEmail.value
+            user.address = newAddress.value
+            user.admin = adminCB.checked
+            userEditVerification = 1
+        }
+    });
+
+    if (userEditVerification == 0) {
+        users.push({username: newUsername.value, email: newEmail.value, address: newAddress.value, admin: adminCB.checked})
+    } 
     updateTable(users)
 
     // newUsername.value = ""
@@ -52,7 +63,7 @@ function updateTable(users) {
         tableRow.appendChild(tableColumn4)
         tableBody.appendChild(tableRow)
 
-        rowCount++
+        userEditVerification = 0
     });
 }
 
