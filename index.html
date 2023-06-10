@@ -8,6 +8,35 @@
     <script src="js/basic.js" defer></script>
 </head>
 <body>
-    <button id="btn">Press me</button>
+    <table>
+        <thead>
+            <tr><th align="left">Username</th><th align="left">Email</th><th align="left">Adress</th><th align="left">Admin</th></tr>
+        </thead>
+        <tbody id="tableBody">
+            
+        </tbody>
+    </table>
+
+    <br>
+
+    <fieldset>
+        <legend>Add new user</legend>
+        <label for="Username">Write username: </label>
+        <input type="text" name="Username" id="input-username" placeholder="Username">
+        <br>
+        <label for="Email">Write email: </label>
+        <input type="text" name="Email" id="input-email" placeholder="Email">
+        <br>
+        <label for="Address">Write address: </label>
+        <input type="text" name="Address" id="input-address" placeholder="Address">
+        <br><br>
+        <label for="input-admin">Check if you are admin: </label>
+        <input type="checkbox" id="input-admin">
+        <br><br>
+
+        <button id="submit-data">Submit</button>
+    </fieldset>
+    <br>
+    <button id="empty-table">Delete all users</button>
 </body>
 </html>
