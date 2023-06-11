@@ -86,8 +86,12 @@ function updateTable(users) {
 }
 
 function emptyTable()   {
-    while(tableBody.hasChildNodes())  {
-        tableBody.removeChild(tableBody.firstChild)
+    while(tableBody.hasChildNodes)  {
+        if(tableBody.lastChild == document.getElementById("testRow2"))  {
+            break
+        } else{
+            tableBody.removeChild(tableBody.lastChild)
+        }
     }
     
 }
