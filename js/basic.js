@@ -45,7 +45,7 @@ emptyButton.addEventListener("click", () => {
 })
 
 function updateTable(users) {
-    emptyTable()
+    emptyTableExceptTestRows()
     users.forEach(user => {
         let tableRow = document.createElement("tr")
 
@@ -85,10 +85,19 @@ function updateTable(users) {
     });
 }
 
+function emptyTableExceptTestRows()   {
+    while(tableBody.hasChildNodes())  {
+        if(tableBody.lastChild == document.getElementById("testRow3"))  {
+            break
+        } else  {
+            tableBody.removeChild(tableBody.lastChild)
+        }
+    }
+}
+
 function emptyTable()   {
     while(tableBody.hasChildNodes())  {
-        tableBody.removeChild(tableBody.lastChild)
+        tableBody.removeChild(tableBody.firstChild)
     }
-    
 }
 
